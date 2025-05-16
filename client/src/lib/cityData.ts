@@ -1,0 +1,32 @@
+export const topCities = [
+  "Delhi",
+  "Mumbai",
+  "Bangalore",
+  "Hyderabad",
+  "Chennai",
+  "Kolkata",
+];
+
+export const allCities = [
+  "Agra",
+  "Ahmedabad",
+  "Allahabad",
+  "Amritsar",
+  "Auraiya",
+  "Bangalore",
+  "Bhopal",
+  "Chandigarh",
+  "Chennai",
+  "Coimbatore",
+  "Dehradun",
+  "Delhi",
+  "Hyderabad",
+  "Jaipur",
+  "Kanpur",
+  "Kolkata",
+  "Lucknow",
+  "Mumbai",
+  "Pune",
+  "Surat",
+  "Varanasi",
+].sort();
