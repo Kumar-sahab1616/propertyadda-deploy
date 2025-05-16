@@ -2,191 +2,272 @@ import { Link } from "wouter";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-secondary-900 to-secondary-950 text-white relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-500 opacity-5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-500 opacity-5 rounded-full blur-3xl"></div>
-      </div>
-      
+    <footer className="bg-secondary-900 text-white relative overflow-hidden">
       {/* Footer Content */}
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Top Section with Logo and Newsletter */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 pb-10 border-b border-secondary-800">
-          <div className="mb-6 md:mb-0">
-            <div className="flex items-center">
-              <i className="fas fa-building text-primary-500 mr-2 text-3xl"></i>
-              <h2 className="text-2xl font-bold">
-                <span className="text-primary-400">Property</span><span className="text-accent-400">Adda</span>
-              </h2>
-            </div>
-            <p className="text-secondary-300 mt-2 max-w-md">
-              Your trusted partner in finding your dream property across India.
-            </p>
-          </div>
-          
-          <div className="flex space-x-3">
-            <a href="#" className="w-10 h-10 bg-secondary-800 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors duration-300">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" className="w-10 h-10 bg-secondary-800 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors duration-300">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" className="w-10 h-10 bg-secondary-800 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors duration-300">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="w-10 h-10 bg-secondary-800 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors duration-300">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-        
+      <div className="container mx-auto px-4 py-10 relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div>
-            <h3 className="text-lg font-semibold mb-6 flex items-center">
-              <i className="fas fa-info-circle text-primary-500 mr-2"></i>
-              <span className="relative inline-block">
-                About Us
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-primary-500"></span>
-              </span>
+            <h3 className="text-sm font-semibold mb-4 text-primary flex items-center">
+              <i className="fas fa-arrow-right text-primary mr-2"></i>
+              PropertyAdda
             </h3>
-            <p className="text-secondary-400 mb-4 leading-relaxed">
-              PropertyAdda is India's leading online real estate marketplace to buy, sell, and rent residential and commercial properties.
-            </p>
-            <p className="text-secondary-400 mb-4 leading-relaxed">
-              Launched in 2023, we connect buyers with sellers and revolutionize the way people discover and rent properties.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-6 flex items-center">
-              <i className="fas fa-link text-primary-500 mr-2"></i>
-              <span className="relative inline-block">
-                Quick Links
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-primary-500"></span>
-              </span>
-            </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
-                <a href="#" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
                   Terms & Conditions
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
-                  Refund Policy
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Sitemap
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6 flex items-center">
-              <i className="fas fa-map-marker-alt text-primary-500 mr-2"></i>
-              <span className="relative inline-block">
-                Popular Locations
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-primary-500"></span>
-              </span>
+            <h3 className="text-sm font-semibold mb-4 text-primary flex items-center">
+              <i className="fas fa-arrow-right text-primary mr-2"></i>
+              Buy Property
             </h3>
-            <ul className="grid grid-cols-2 gap-2">
+            <ul className="space-y-2">
               <li>
-                <Link href="/properties?city=Delhi" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
-                  Delhi
-                </Link>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Buy Property
+                </a>
               </li>
               <li>
-                <Link href="/properties?city=Mumbai" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
-                  Mumbai
-                </Link>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Sell Property
+                </a>
               </li>
               <li>
-                <Link href="/properties?city=Bangalore" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
-                  Bangalore
-                </Link>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Rent Property
+                </a>
               </li>
               <li>
-                <Link href="/properties?city=Hyderabad" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
-                  Hyderabad
-                </Link>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  PG & Co-living
+                </a>
               </li>
               <li>
-                <Link href="/properties?city=Lucknow" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
-                  Lucknow
-                </Link>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  New Projects
+                </a>
               </li>
               <li>
-                <Link href="/properties?city=Auraiya" className="text-secondary-400 hover:text-white transition-colors duration-300 flex items-center">
-                  <i className="fas fa-chevron-right text-xs text-primary-500 mr-2"></i>
-                  Auraiya
-                </Link>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Commercial Properties
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Advertise Property
+                </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6 flex items-center">
-              <i className="fas fa-phone-alt text-primary-500 mr-2"></i>
-              <span className="relative inline-block">
-                Contact Us
-                <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-primary-500"></span>
-              </span>
+            <h3 className="text-sm font-semibold mb-4 text-primary flex items-center">
+              <i className="fas fa-arrow-right text-primary mr-2"></i>
+              Painting Services
             </h3>
-            <address className="not-italic text-secondary-400 space-y-3">
-              <div className="flex items-start">
-                <i className="fas fa-map-marker-alt text-primary-500 mt-1 mr-3"></i>
-                <p>Om Nagar, Auraiya<br />Uttar Pradesh - 206122</p>
-              </div>
-              <div className="flex items-center">
-                <i className="fas fa-phone-alt text-primary-500 mr-3"></i>
-                <p>+91 9045327038</p>
-              </div>
-              <div className="flex items-center">
-                <i className="fas fa-envelope text-primary-500 mr-3"></i>
-                <p>info@propertyadda.com</p>
-              </div>
-              <div className="flex items-center">
-                <i className="fas fa-clock text-primary-500 mr-3"></i>
-                <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
-              </div>
-            </address>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Painting Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Electrician Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Plumbing Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Carpenter Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Cleaning Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Pest Control
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Interior Design
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold mb-4 text-primary flex items-center">
+              <i className="fas fa-arrow-right text-primary mr-2"></i>
+              Delhi NCR
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Delhi NCR
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Mumbai
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Bangalore
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Hyderabad
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Chennai
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-secondary-400 hover:text-primary text-sm flex items-center">
+                  <i className="fas fa-arrow-right text-xs text-primary mr-2"></i>
+                  Kolkata
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Social Media Icons */}
+        <div className="flex justify-center mt-8 mb-6 space-x-4">
+          <a href="#" className="text-white">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" className="text-white">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="#" className="text-white">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="#" className="text-white">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" className="text-white">
+            <i className="fab fa-youtube"></i>
+          </a>
+        </div>
+
+        {/* Contact Info */}
+        <div className="text-center text-sm text-secondary-400 mb-4">
+          <p className="flex items-center justify-center mb-1">
+            <i className="fas fa-map-marker-alt text-primary mr-2"></i>
+            123 Property Lane, Real Estate City, India 110001
+          </p>
+          <p className="flex items-center justify-center mb-1">
+            <i className="fas fa-phone-alt text-primary mr-2"></i>
+            +91 1234 567 890
+          </p>
+          <p className="flex items-center justify-center">
+            <i className="fas fa-envelope text-primary mr-2"></i>
+            info@propertyadda.com
+          </p>
+        </div>
+
+        {/* Property Types */}
+        <div className="border-t border-secondary-800 mt-6 pt-6">
+          <h3 className="text-sm font-semibold mb-3">Property Types</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-2 gap-x-4 text-secondary-400 text-sm">
+            <a href="#" className="hover:text-primary">Apartments</a>
+            <a href="#" className="hover:text-primary">Villas</a>
+            <a href="#" className="hover:text-primary">Plots</a>
+            <a href="#" className="hover:text-primary">Builder Floors</a>
+            <a href="#" className="hover:text-primary">Farm Houses</a>
+            <a href="#" className="hover:text-primary">Commercial Spaces</a>
+            <a href="#" className="hover:text-primary">Office Spaces</a>
+            <a href="#" className="hover:text-primary">Retail Shops</a>
+            <a href="#" className="hover:text-primary">PentHouses</a>
+            <a href="#" className="hover:text-primary">Land</a>
+            <a href="#" className="hover:text-primary">Studio Apartments</a>
+            <a href="#" className="hover:text-primary">Warehouses</a>
           </div>
         </div>
 
         {/* Bottom Copyright */}
-        <div className="border-t border-secondary-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-secondary-400">
+        <div className="border-t border-secondary-800 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-secondary-400 text-sm">
           <p>&copy; {new Date().getFullYear()} PropertyAdda. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 flex items-center space-x-4">
-            <a href="#" className="text-secondary-400 hover:text-white transition-colors duration-300">Terms</a>
-            <span>•</span>
-            <a href="#" className="text-secondary-400 hover:text-white transition-colors duration-300">Privacy</a>
-            <span>•</span>
-            <a href="#" className="text-secondary-400 hover:text-white transition-colors duration-300">Cookies</a>
+          <div className="mt-2 md:mt-0 flex items-center space-x-4">
+            <a href="#" className="hover:text-primary">Terms & Conditions</a>
+            <a href="#" className="hover:text-primary">Privacy Policy</a>
+            <a href="#" className="hover:text-primary">Disclaimer</a>
+            <a href="#" className="hover:text-primary">Feedback</a>
           </div>
         </div>
       </div>
