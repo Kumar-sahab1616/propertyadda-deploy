@@ -129,71 +129,86 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 pb-2">
-            <div className="flex items-center justify-between pb-3">
-              <div className="flex items-center space-x-1 text-secondary-600">
-                <i className="fas fa-map-marker-alt text-primary-700"></i>
-                <span className="text-sm font-medium">{selectedCity}</span>
-                <i className="fas fa-chevron-down text-xs"></i>
-              </div>
-              {user ? (
-                <div className="flex items-center space-x-3">
-                  <span className="text-sm font-medium text-secondary-700">
-                    Hi, {user.username}
-                  </span>
-                  <button
-                    onClick={handleLogout}
-                    className="text-sm font-medium text-primary-700"
-                  >
-                    Logout
-                  </button>
+          <div className="md:hidden mt-4 pb-3 animate-in slide-in-from-top-5 duration-300">
+            <div className="bg-secondary-50 rounded-lg p-4 mb-4">
+              <div className="flex items-center justify-between pb-3 border-b border-secondary-100">
+                <div className="flex items-center space-x-2 text-secondary-600">
+                  <i className="fas fa-map-marker-alt text-primary-600"></i>
+                  <span className="text-sm font-medium">{selectedCity}</span>
+                  <i className="fas fa-chevron-down text-xs"></i>
                 </div>
-              ) : (
-                <button
-                  onClick={openLoginModal}
-                  className="text-sm font-medium text-primary-700"
-                >
-                  Login / Register
-                </button>
-              )}
+                {user ? (
+                  <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2 bg-white py-1 px-3 rounded-full">
+                      <i className="fas fa-user-circle text-primary-600"></i>
+                      <span className="text-sm font-medium text-secondary-700">
+                        {user.username}
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <button
+                    onClick={openLoginModal}
+                    className="text-sm font-medium bg-white py-1.5 px-4 rounded-full text-primary-600 shadow-sm flex items-center"
+                  >
+                    <i className="fas fa-user mr-1"></i> Login
+                  </button>
+                )}
+              </div>
             </div>
-            <div className="flex flex-col space-y-3 border-t border-secondary-100 pt-3">
+            
+            <div className="grid grid-cols-2 gap-3">
               <Link
                 href="/properties?status=For Sale"
-                className="text-sm font-medium hover:text-primary-700"
+                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-secondary-100"
               >
-                Buy
+                <i className="fas fa-home text-primary-600 text-xl mb-2"></i>
+                <span className="text-sm font-medium">Buy</span>
               </Link>
               <Link
                 href="/properties?status=For Rent"
-                className="text-sm font-medium hover:text-primary-700"
+                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-secondary-100"
               >
-                Rent
+                <i className="fas fa-key text-primary-600 text-xl mb-2"></i>
+                <span className="text-sm font-medium">Rent</span>
               </Link>
               <Link
                 href="/post-property"
-                className="text-sm font-medium hover:text-primary-700"
+                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-secondary-100"
               >
-                Sell
+                <i className="fas fa-tag text-primary-600 text-xl mb-2"></i>
+                <span className="text-sm font-medium">Sell</span>
               </Link>
               <Link
                 href="#"
-                className="text-sm font-medium hover:text-primary-700"
+                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-secondary-100"
               >
-                Home Loans
+                <i className="fas fa-rupee-sign text-primary-600 text-xl mb-2"></i>
+                <span className="text-sm font-medium">Home Loans</span>
               </Link>
               <Link
                 href="#"
-                className="text-sm font-medium hover:text-primary-700"
+                className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-secondary-100"
               >
-                Property Services
+                <i className="fas fa-tools text-primary-600 text-xl mb-2"></i>
+                <span className="text-sm font-medium">Services</span>
               </Link>
+              {user && (
+                <button
+                  onClick={handleLogout}
+                  className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-secondary-100"
+                >
+                  <i className="fas fa-sign-out-alt text-accent-500 text-xl mb-2"></i>
+                  <span className="text-sm font-medium">Logout</span>
+                </button>
+              )}
               {user && user.role === "admin" && (
                 <Link
                   href="/admin"
-                  className="text-sm font-medium hover:text-primary-700"
+                  className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-secondary-100"
                 >
-                  Admin Panel
+                  <i className="fas fa-cog text-primary-600 text-xl mb-2"></i>
+                  <span className="text-sm font-medium">Admin Panel</span>
                 </Link>
               )}
             </div>
