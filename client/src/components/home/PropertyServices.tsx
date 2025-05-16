@@ -45,15 +45,18 @@ export default function PropertyServices() {
               : services?.map((service) => (
                   <div
                     key={service.id}
-                    className="text-center p-4 rounded-lg hover:bg-secondary-50 transition-colors cursor-pointer"
+                    className="text-center p-6 rounded-xl border border-secondary-100 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-300 cursor-pointer"
                   >
-                    <div className="w-16 h-16 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary-50 to-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-inner transform transition-transform duration-300 hover:rotate-6">
                       <i className={getIconClass(service.icon)}></i>
                     </div>
-                    <h3 className="font-semibold">{service.name}</h3>
-                    <p className="text-xs text-secondary-500 mt-1">
+                    <h3 className="font-semibold text-lg text-secondary-800">{service.name}</h3>
+                    <p className="text-sm text-secondary-500 mt-2">
                       {service.description}
                     </p>
+                    <button className="mt-4 text-primary-600 text-sm font-medium hover:text-primary-700 inline-flex items-center">
+                      Learn more <i className="fas fa-arrow-right ml-1 text-xs"></i>
+                    </button>
                   </div>
                 ))}
           </div>

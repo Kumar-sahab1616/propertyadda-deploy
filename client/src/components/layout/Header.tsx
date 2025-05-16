@@ -44,18 +44,21 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-3">
+    <header className="bg-white shadow-md sticky top-0 z-50 border-b border-secondary-100">
+      <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary-800">
-              Property<span className="text-accent-500">Adda</span>
-            </span>
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="flex items-center">
+              <i className="fas fa-building text-primary-600 mr-2 text-2xl transform group-hover:scale-110 transition-transform"></i>
+              <span className="text-2xl font-bold">
+                <span className="text-primary-700">Property</span><span className="text-accent-500">Adda</span>
+              </span>
+            </div>
           </Link>
 
           {/* City Selector (Desktop) */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center ml-6">
             <CitySelector
               selectedCity={selectedCity}
               onCityChange={handleCityChange}
@@ -64,20 +67,20 @@ export default function Header() {
 
           {/* Main Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/properties?status=For Sale" className="text-sm font-medium hover:text-primary-700">
-              Buy
+            <Link href="/properties?status=For Sale" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
+              <i className="fas fa-home mr-1"></i> Buy
             </Link>
-            <Link href="/properties?status=For Rent" className="text-sm font-medium hover:text-primary-700">
-              Rent
+            <Link href="/properties?status=For Rent" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
+              <i className="fas fa-key mr-1"></i> Rent
             </Link>
-            <Link href="/post-property" className="text-sm font-medium hover:text-primary-700">
-              Sell
+            <Link href="/post-property" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
+              <i className="fas fa-tag mr-1"></i> Sell
             </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary-700">
-              Home Loans
+            <Link href="#" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
+              <i className="fas fa-rupee-sign mr-1"></i> Home Loans
             </Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary-700">
-              Property Services
+            <Link href="#" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
+              <i className="fas fa-tools mr-1"></i> Property Services
             </Link>
           </div>
 
@@ -85,38 +88,41 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             {user ? (
               <div className="hidden md:flex items-center space-x-4">
-                <span className="text-sm font-medium text-secondary-700">Hi, {user.username}</span>
+                <div className="flex items-center space-x-2 bg-primary-50 py-1 px-3 rounded-full">
+                  <i className="fas fa-user-circle text-primary-600"></i>
+                  <span className="text-sm font-medium text-secondary-700">Hi, {user.username}</span>
+                </div>
                 {user.role === "admin" && (
-                  <Link href="/admin" className="text-sm font-medium text-primary-700 hover:text-primary-800">
-                    Admin
+                  <Link href="/admin" className="text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors">
+                    <i className="fas fa-cog mr-1"></i> Admin
                   </Link>
                 )}
                 <button
                   onClick={handleLogout}
-                  className="text-sm font-medium text-primary-700 hover:text-primary-800"
+                  className="text-sm font-medium text-secondary-600 hover:text-secondary-800 transition-colors"
                 >
-                  Logout
+                  <i className="fas fa-sign-out-alt mr-1"></i> Logout
                 </button>
               </div>
             ) : (
               <button
                 onClick={openLoginModal}
-                className="hidden md:block text-sm font-medium text-primary-700 hover:text-primary-800"
+                className="hidden md:flex items-center space-x-1 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
               >
-                Login
+                <i className="fas fa-user mr-1"></i> Login
               </button>
             )}
             <Link href="/post-property">
-              <Button className="bg-primary-700 text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-primary-800 transition">
-                Post Property <span className="hidden md:inline">FREE</span>
+              <Button className="cta-button text-white text-sm font-medium px-5 py-2 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <i className="fas fa-plus-circle mr-1"></i> Post Property <span className="hidden md:inline bg-white/20 ml-1 px-1.5 py-0.5 rounded-sm text-xs">FREE</span>
               </Button>
             </Link>
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden text-secondary-700"
+              className="md:hidden bg-secondary-100 p-2 rounded-md text-secondary-700 hover:bg-secondary-200 transition-colors"
             >
-              <i className="fas fa-bars text-lg"></i>
+              <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-lg`}></i>
             </button>
           </div>
         </div>
