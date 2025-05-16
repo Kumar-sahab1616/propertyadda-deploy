@@ -44,15 +44,43 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50 border-b border-secondary-100">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-secondary-100">
+      {/* Top Bar */}
+      <div className="bg-primary text-white py-1">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div className="flex space-x-4 text-xs">
+            <a href="#" className="hover:underline flex items-center">
+              <i className="fas fa-download mr-1"></i> Download App
+            </a>
+            <a href="#" className="hover:underline flex items-center">
+              <i className="fas fa-briefcase mr-1"></i> PropertyAdda for Business
+            </a>
+            <a href="#" className="hover:underline flex items-center">
+              <i className="fas fa-ad mr-1"></i> Advertise
+            </a>
+          </div>
+          <div className="flex space-x-4 text-xs">
+            <a href="#" className="hover:underline flex items-center">
+              <i className="fas fa-blog mr-1"></i> Blog
+            </a>
+            <a href="#" className="hover:underline flex items-center">
+              <i className="fas fa-question-circle mr-1"></i> Help
+            </a>
+            <a href="#" className="hover:underline flex items-center">
+              <i className="fas fa-envelope mr-1"></i> Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="flex items-center">
-              <i className="fas fa-building text-primary-600 mr-2 text-2xl transform group-hover:scale-110 transition-transform"></i>
               <span className="text-2xl font-bold">
-                <span className="text-primary-700">Property</span><span className="text-accent-500">Adda</span>
+                <span className="text-primary">Property</span><span className="text-primary">Adda</span>
+                <span className="text-xs bg-primary text-white px-1 rounded-sm ml-1">.com</span>
               </span>
             </div>
           </Link>
@@ -66,21 +94,27 @@ export default function Header() {
           </div>
 
           {/* Main Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/properties?status=For Sale" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
-              <i className="fas fa-home mr-1"></i> Buy
+          <div className="hidden md:flex items-center space-x-4">
+            <Link href="/properties?status=For Sale" className="flex flex-col items-center text-sm font-medium hover:text-primary transition-colors duration-200">
+              <i className="fas fa-home text-lg mb-1"></i> Buy
             </Link>
-            <Link href="/properties?status=For Rent" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
-              <i className="fas fa-key mr-1"></i> Rent
+            <Link href="/properties?status=For Rent" className="flex flex-col items-center text-sm font-medium hover:text-primary transition-colors duration-200">
+              <i className="fas fa-key text-lg mb-1"></i> Rent
             </Link>
-            <Link href="/post-property" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
-              <i className="fas fa-tag mr-1"></i> Sell
+            <Link href="/post-property" className="flex flex-col items-center text-sm font-medium hover:text-primary transition-colors duration-200">
+              <i className="fas fa-tag text-lg mb-1"></i> Sell
             </Link>
-            <Link href="#" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
-              <i className="fas fa-rupee-sign mr-1"></i> Home Loans
+            <Link href="#" className="flex flex-col items-center text-sm font-medium hover:text-primary transition-colors duration-200">
+              <i className="fas fa-tools text-lg mb-1"></i> Home Services
             </Link>
-            <Link href="#" className="nav-link text-sm font-medium relative hover:text-primary-600 transition-colors duration-200">
-              <i className="fas fa-tools mr-1"></i> Property Services
+            <Link href="#" className="flex flex-col items-center text-sm font-medium hover:text-primary transition-colors duration-200">
+              <i className="fas fa-building text-lg mb-1"></i> PG/Co-living
+            </Link>
+            <Link href="#" className="flex flex-col items-center text-sm font-medium hover:text-primary transition-colors duration-200">
+              <i className="fas fa-briefcase text-lg mb-1"></i> Commercial
+            </Link>
+            <Link href="#" className="flex flex-col items-center text-sm font-medium hover:text-primary transition-colors duration-200">
+              <i className="fas fa-map-marked-alt text-lg mb-1"></i> Plot
             </Link>
           </div>
 
@@ -88,12 +122,12 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             {user ? (
               <div className="hidden md:flex items-center space-x-4">
-                <div className="flex items-center space-x-2 bg-primary-50 py-1 px-3 rounded-full">
-                  <i className="fas fa-user-circle text-primary-600"></i>
+                <div className="flex items-center space-x-2 py-1 px-3">
+                  <i className="fas fa-user-circle text-primary"></i>
                   <span className="text-sm font-medium text-secondary-700">Hi, {user.username}</span>
                 </div>
                 {user.role === "admin" && (
-                  <Link href="/admin" className="text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors">
+                  <Link href="/admin" className="text-sm font-medium text-primary hover:text-primary transition-colors">
                     <i className="fas fa-cog mr-1"></i> Admin
                   </Link>
                 )}
@@ -107,14 +141,14 @@ export default function Header() {
             ) : (
               <button
                 onClick={openLoginModal}
-                className="hidden md:flex items-center space-x-1 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                className="hidden md:flex items-center border border-primary rounded-full px-5 py-1.5 text-sm font-medium text-primary hover:bg-primary/5 transition-colors"
               >
                 <i className="fas fa-user mr-1"></i> Login
               </button>
             )}
             <Link href="/post-property">
-              <Button className="cta-button text-white text-sm font-medium px-5 py-2 rounded-lg shadow-sm hover:shadow-md transition-all">
-                <i className="fas fa-plus-circle mr-1"></i> Post Property <span className="hidden md:inline bg-white/20 ml-1 px-1.5 py-0.5 rounded-sm text-xs">FREE</span>
+              <Button className="bg-primary hover:bg-primary/90 text-white text-sm font-medium px-5 py-2 rounded-full shadow-sm hover:shadow-md transition-all">
+                <i className="fas fa-plus-circle mr-1"></i> Post Property FREE
               </Button>
             </Link>
             {/* Mobile Menu Button */}

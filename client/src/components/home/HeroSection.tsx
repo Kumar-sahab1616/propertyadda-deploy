@@ -25,7 +25,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative hero-gradient py-16 md:py-28 overflow-hidden">
+    <section className="relative bg-primary py-16 md:py-24 overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-10 left-10 w-64 h-64 bg-white opacity-5 rounded-full"></div>
@@ -34,61 +34,77 @@ export default function HeroSection() {
       </div>
       
       {/* Background Image Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+      <div className="absolute inset-0 bg-black opacity-10 z-0"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-8">
-          <span className="inline-block px-4 py-1 rounded-full bg-white/20 text-white text-sm font-medium mb-4">
-            India's #1 Property Portal
-          </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-md">
-            Find Your Dream Property
+            Find Your Perfect Home &<br />Professional Services
           </h1>
           <p className="text-lg md:text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
-            Discover the perfect home across India with PropertyAdda - Your trusted partner in real estate
+            Discover properties and home services tailored to your needs
           </p>
         </div>
 
+        {/* City Selection */}
+        <div className="flex justify-center mb-6">
+          <div className="bg-white rounded-full shadow-md px-2 py-0.5 inline-flex items-center space-x-1">
+            <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium flex items-center">
+              <i className="fas fa-map-marker-alt mr-1"></i> DELHI NCR <i className="fas fa-chevron-down ml-1 text-xs"></i>
+            </span>
+            <span className="px-2 py-1 text-sm">Mumbai</span>
+            <span className="px-2 py-1 text-sm">Bangalore</span>
+            <span className="px-2 py-1 text-sm">Hyderabad</span>
+            <span className="px-2 py-1 text-sm">Pune</span>
+            <span className="px-2 py-1 text-sm">Chennai</span>
+            <span className="px-2 py-1 text-sm">Kolkata</span>
+            <span className="px-2 py-1 text-sm">+ more</span>
+          </div>
+        </div>
+        
         {/* Search Box */}
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-6 border border-slate-100 transform -translate-y-5">
+        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-5">
           {/* Tab Navigation */}
           <Tabs defaultValue="buy" value={selectedTab} onValueChange={setSelectedTab}>
-            <TabsList className="mb-6 w-full bg-slate-100/80 p-1 rounded-lg">
+            <TabsList className="mb-6 w-full p-0 bg-transparent border-b border-gray-200">
               <TabsTrigger 
                 value="buy" 
-                className="data-[state=active]:bg-white data-[state=active]:text-primary-700 data-[state=active]:shadow-sm data-[state=inactive]:text-secondary-600 rounded-md px-6 py-2.5 transition-all duration-200"
+                className="data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=inactive]:text-secondary-600 rounded-none px-6 py-2.5 transition-all duration-200"
               >
                 <i className="fas fa-home mr-2"></i> Buy
               </TabsTrigger>
               <TabsTrigger 
                 value="rent" 
-                className="data-[state=active]:bg-white data-[state=active]:text-primary-700 data-[state=active]:shadow-sm data-[state=inactive]:text-secondary-600 rounded-md px-6 py-2.5 transition-all duration-200"
+                className="data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=inactive]:text-secondary-600 rounded-none px-6 py-2.5 transition-all duration-200"
               >
                 <i className="fas fa-key mr-2"></i> Rent
               </TabsTrigger>
               <TabsTrigger 
                 value="pg" 
-                className="data-[state=active]:bg-white data-[state=active]:text-primary-700 data-[state=active]:shadow-sm data-[state=inactive]:text-secondary-600 rounded-md px-6 py-2.5 transition-all duration-200"
+                className="data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=inactive]:text-secondary-600 rounded-none px-6 py-2.5 transition-all duration-200"
               >
                 <i className="fas fa-building mr-2"></i> PG/Co-living
               </TabsTrigger>
               <TabsTrigger 
                 value="commercial" 
-                className="data-[state=active]:bg-white data-[state=active]:text-primary-700 data-[state=active]:shadow-sm data-[state=inactive]:text-secondary-600 rounded-md px-6 py-2.5 transition-all duration-200"
+                className="data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=inactive]:text-secondary-600 rounded-none px-6 py-2.5 transition-all duration-200"
               >
                 <i className="fas fa-briefcase mr-2"></i> Commercial
+              </TabsTrigger>
+              <TabsTrigger 
+                value="plot" 
+                className="data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=inactive]:text-secondary-600 rounded-none px-6 py-2.5 transition-all duration-200"
+              >
+                <i className="fas fa-map-marked-alt mr-2"></i> Plot
               </TabsTrigger>
             </TabsList>
             
             <TabsContent value="buy">
               <form onSubmit={handleSearch} className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
                 <div className="relative flex-grow">
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <i className="fas fa-search text-secondary-400"></i>
-                  </div>
                   <Input
                     type="text"
-                    className="w-full pl-10 pr-3 py-3 border border-secondary-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full pl-4 pr-3 py-3 border border-secondary-200 rounded focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                     placeholder="Search by locality, landmark, project, or builder"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -96,11 +112,32 @@ export default function HeroSection() {
                 </div>
                 <Button
                   type="submit"
-                  className="bg-primary-700 hover:bg-primary-800 text-white font-medium px-6 py-3 rounded-md transition-colors"
+                  className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded"
                 >
                   Search
                 </Button>
               </form>
+              <div className="flex justify-between mt-4 text-sm text-secondary-600">
+                <div className="flex space-x-4">
+                  <a href="#" className="hover:text-primary">
+                    <i className="fas fa-calculator mr-1"></i> EMI Calculator
+                  </a>
+                  <a href="#" className="hover:text-primary">
+                    <i className="fas fa-exchange-alt mr-1"></i> Area Converter
+                  </a>
+                  <a href="#" className="hover:text-primary">
+                    <i className="fas fa-chart-line mr-1"></i> Property Rates
+                  </a>
+                </div>
+                <div className="flex space-x-4">
+                  <a href="#" className="hover:text-primary">
+                    <i className="fas fa-hand-holding-usd mr-1"></i> Investment Advice
+                  </a>
+                  <a href="#" className="hover:text-primary">
+                    <i className="fas fa-user-tie mr-1"></i> Owner Services
+                  </a>
+                </div>
+              </div>
             </TabsContent>
             
             <TabsContent value="rent">
