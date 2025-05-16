@@ -1,0 +1,29 @@
+{
+  "name": "property-adda-frontend",
+  "version": 2,
+  "buildCommand": "npm run build:frontend",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "regions": ["sin1"],
+  "env": {
+    "VITE_API_URL": "@property_adda_api_url"
+  },
+  "build": {
+    "env": {
+      "VITE_API_URL": "@property_adda_api_url"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ]
+}
