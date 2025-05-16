@@ -25,48 +25,58 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-r from-primary-900 to-primary-800 py-12 md:py-24">
+    <section className="relative hero-gradient py-16 md:py-28 overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-white opacity-5 rounded-full"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-white opacity-5 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-white opacity-5 rounded-full"></div>
+      </div>
+      
       {/* Background Image Overlay */}
-      <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
+      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-8">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <span className="inline-block px-4 py-1 rounded-full bg-white/20 text-white text-sm font-medium mb-4">
+            India's #1 Property Portal
+          </span>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-md">
             Find Your Dream Property
           </h1>
-          <p className="text-lg md:text-xl text-white opacity-90">
-            Discover the perfect home across India with PropertyAdda
+          <p className="text-lg md:text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+            Discover the perfect home across India with PropertyAdda - Your trusted partner in real estate
           </p>
         </div>
 
         {/* Search Box */}
-        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-4">
+        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-6 border border-slate-100 transform -translate-y-5">
           {/* Tab Navigation */}
           <Tabs defaultValue="buy" value={selectedTab} onValueChange={setSelectedTab}>
-            <TabsList className="mb-4 w-full bg-transparent border-b">
+            <TabsList className="mb-6 w-full bg-slate-100/80 p-1 rounded-lg">
               <TabsTrigger 
                 value="buy" 
-                className="data-[state=active]:text-primary-700 data-[state=active]:border-b-2 data-[state=active]:border-primary-700 data-[state=inactive]:text-secondary-500"
+                className="data-[state=active]:bg-white data-[state=active]:text-primary-700 data-[state=active]:shadow-sm data-[state=inactive]:text-secondary-600 rounded-md px-6 py-2.5 transition-all duration-200"
               >
-                Buy
+                <i className="fas fa-home mr-2"></i> Buy
               </TabsTrigger>
               <TabsTrigger 
                 value="rent" 
-                className="data-[state=active]:text-primary-700 data-[state=active]:border-b-2 data-[state=active]:border-primary-700 data-[state=inactive]:text-secondary-500"
+                className="data-[state=active]:bg-white data-[state=active]:text-primary-700 data-[state=active]:shadow-sm data-[state=inactive]:text-secondary-600 rounded-md px-6 py-2.5 transition-all duration-200"
               >
-                Rent
+                <i className="fas fa-key mr-2"></i> Rent
               </TabsTrigger>
               <TabsTrigger 
                 value="pg" 
-                className="data-[state=active]:text-primary-700 data-[state=active]:border-b-2 data-[state=active]:border-primary-700 data-[state=inactive]:text-secondary-500"
+                className="data-[state=active]:bg-white data-[state=active]:text-primary-700 data-[state=active]:shadow-sm data-[state=inactive]:text-secondary-600 rounded-md px-6 py-2.5 transition-all duration-200"
               >
-                PG/Co-living
+                <i className="fas fa-building mr-2"></i> PG/Co-living
               </TabsTrigger>
               <TabsTrigger 
                 value="commercial" 
-                className="data-[state=active]:text-primary-700 data-[state=active]:border-b-2 data-[state=active]:border-primary-700 data-[state=inactive]:text-secondary-500"
+                className="data-[state=active]:bg-white data-[state=active]:text-primary-700 data-[state=active]:shadow-sm data-[state=inactive]:text-secondary-600 rounded-md px-6 py-2.5 transition-all duration-200"
               >
-                Commercial
+                <i className="fas fa-briefcase mr-2"></i> Commercial
               </TabsTrigger>
             </TabsList>
             
