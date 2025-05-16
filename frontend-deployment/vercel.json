@@ -1,0 +1,19 @@
+{
+  "name": "property-adda-frontend",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/client/src/main.tsx"
+    }
+  ],
+  "env": {
+    "VITE_API_URL": "https://api.propertyadda.com"
+  }
+}
